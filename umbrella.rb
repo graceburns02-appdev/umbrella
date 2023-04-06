@@ -53,3 +53,13 @@ x = hourly_data.at(0)
 next_hour = x.fetch("summary")
 
 p "Next hour: " + next_hour
+
+precip = x.fetch("precipProbability")
+
+11.times do |index|
+  x = hourly_data.at(index)
+  precip = x.fetch("precipProbability")
+  precip_round = precip.round
+  p "In " + index.to_s + " hours, there is a " + precip_round.to_s + "% chance of precipitation."
+end
+
