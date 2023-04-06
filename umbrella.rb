@@ -43,3 +43,13 @@ weather = parsed_pirate.fetch("currently")
 temp = weather.fetch("temperature")
 
 p "It is currently " + temp.to_s + "°F."
+
+hourly = parsed_pirate.fetch("hourly")
+
+hourly_data = hourly.fetch("data")
+
+x = hourly_data.at(0)
+
+next_hour = x.fetch("summary")
+
+p "Next hour: " + next_hour
